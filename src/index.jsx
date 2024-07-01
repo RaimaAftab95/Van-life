@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import  Home from "./Pages/Home.jsx";
-import  About from "./Pages/About.jsx";           
+import  About from "./Pages/About.jsx";    
+
+import "./server";
 
 function App() {
   return (
