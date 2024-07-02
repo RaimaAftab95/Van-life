@@ -6,7 +6,11 @@ import  Home from "./Pages/Home.jsx";
 import  About from "./Pages/About.jsx";
 import  Vans from "./Pages/Vans/Vans.jsx";
 import  VanDetail from "./Pages/Vans/VanDetail.jsx";
+import Dashboard from "./Pages/Host/Dashboard";
+import Income from "./Pages/Host/Income";
+import Reviews from "./Pages/Host/Reviews";
 import Layout from "./components/Layout.jsx";
+import HostLayout from "./components/HostLayout";
 
 import "./server";
 
@@ -28,8 +32,15 @@ function App() {
       <Route path="/about" element={<About />} />
       <Route path="/vans" element={<Vans />} />
       <Route path="/vans/:id" element={<VanDetail />} />
-      {/* <Route path="/vans/:id/:type" element={<VanDetail />} />
+        {/* <Route path="/vans/:id/:type" element={<VanDetail />} />
       to show nested route eg */}
+
+      <Route path="/host" element={<HostLayout />}>
+          <Route path="/host" element={<Dashboard />} />
+          <Route path="/host/income" element={<Income />} />
+          <Route path="/host/reviews" element={<Reviews />}  />
+      </Route>
+    
        </Route>
     </Routes>
    
