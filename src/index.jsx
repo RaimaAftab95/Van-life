@@ -1,33 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import  Home from "./Pages/Home.jsx";
 import  About from "./Pages/About.jsx";
 import  Vans from "./Pages/Vans.jsx";
 import  VanDetail from "./Pages/VanDetail.jsx";
+import Layout from "./components/Layout.jsx";
 
 import "./server";
 
 function App() {
   return (
     <BrowserRouter>
-    <header>
+    {/* <header>
       <Link to="/">#VANLIFE</Link>
     <nav>
     {/* <Link to="/">Home</Link> */}
-    <Link to="/about">About</Link>
-    <Link to="/vans">Vans</Link>
-    </nav>
-    </header>
+    {/* <Link to="/about">About</Link>
+    <Link to="/vans">Vans</Link> */}
+    {/* </nav> */}
+    {/* </header> 
+    as now we have made seperate component for header*/} 
     <Routes>
+    <Route element={<Layout />}>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/vans" element={<Vans />} />
       <Route path="/vans/:id" element={<VanDetail />} />
       {/* <Route path="/vans/:id/:type" element={<VanDetail />} />
       to show nested route eg */}
+       </Route>
     </Routes>
+   
   </BrowserRouter>
   )
 }
