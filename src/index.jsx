@@ -27,8 +27,8 @@ function App() {
     {/* </header> 
     as now we have made seperate component for header*/} 
     <Routes>
-    <Route element={<Layout />}>
-      <Route path="/" element={<Home />} />
+    <Route path="/" element={<Layout />}>
+      <Route index element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="vans" element={<Vans />} />
       <Route path="vans/:id" element={<VanDetail />} />
@@ -36,7 +36,7 @@ function App() {
       to show nested route eg */}
 
       <Route path="host" element={<HostLayout />}>
-          <Route path="host" element={<Dashboard />} />
+          <Route index element={<Dashboard />} />
           <Route path="income" element={<Income />} />
           <Route path="reviews" element={<Reviews />}  />
       </Route>
