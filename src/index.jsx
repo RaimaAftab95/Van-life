@@ -4,8 +4,8 @@ import './index.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import  Home from "./Pages/Home.jsx";
 import  About from "./Pages/About.jsx";
-import  Vans from "./Pages/Vans.jsx";
-import  VanDetail from "./Pages/VanDetail.jsx";
+import  Vans from "./Pages/Vans/Vans.jsx";
+import  VanDetail from "./Pages/Vans/VanDetail.jsx";
 import Layout from "./components/Layout.jsx";
 
 import "./server";
