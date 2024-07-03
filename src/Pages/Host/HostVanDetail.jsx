@@ -13,8 +13,8 @@
 //     return <h1>Host Van Detail Page</h1>
 // }
 
-import React from "react"
-import { useParams, Link } from "react-router-dom"
+import React from "react";
+import { useParams, Link, Outlet } from "react-router-dom";
 
 export default function HostVanDetail() {
     const { id } = useParams()
@@ -32,7 +32,8 @@ export default function HostVanDetail() {
 
     return (
         <section>
-            {/* back to one route we use .. */}
+            {/* back to one route we use .. as going up one level from the current URL path. */}
+            {/* The relative prop indicates that the to prop should be resolved relative to the current URL path. */}
             <Link
                 to=".."
                 relative="path"
@@ -52,6 +53,7 @@ export default function HostVanDetail() {
                         <h4>${currentVan.price}/day</h4>
                     </div>
                 </div>
+                <Outlet />
             </div>
         </section>
     )
