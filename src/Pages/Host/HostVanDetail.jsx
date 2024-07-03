@@ -32,6 +32,7 @@ export default function HostVanDetail() {
 
     return (
         <section>
+            {/* back to one route we use .. */}
             <Link
                 to=".."
                 relative="path"
