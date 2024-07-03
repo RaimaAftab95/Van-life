@@ -1,19 +1,11 @@
-// import React from "react";
-// import { useParams } from "react-router-dom";
-
-// export default function VanDetail() {
-//     const params = useParams();
-//     console.log(params);
-//     return <h1>Van detail page goes here</h1>
-// }
-
 // challange to fetch data by using id of selected van
 import React from "react"
 import { useParams } from "react-router-dom"
 
 export default function VanDetail() {
-    const params = useParams()
-    const [van, setVan] = React.useState(null)
+    const params = useParams();
+    console.log(params);
+    const [van, setVan] = React.useState(null);
 
     React.useEffect(() => {
         fetch(`/api/vans/${params.id}`)

@@ -1,11 +1,3 @@
-// import React from "react";
-
-// export default function About() {
-//     return (
-// <h1>Hello, its About page 🎉</h1>
-//     )
-//}
-
 import React from "react"
 import bgImg from "../assets/images/about-hero.png"
 import { Link } from "react-router-dom"

@@ -22,15 +22,6 @@ import "./server";
 function App() {
   return (
     <BrowserRouter>
-    {/* <header>
-      <Link to="/">#VANLIFE</Link>
-    <nav>
-    {/* <Link to="/">Home</Link> */}
-    {/* <Link to="/about">About</Link>
-    <Link to="/vans">Vans</Link> */}
-    {/* </nav> */}
-    {/* </header> 
-    as now we have made seperate component for header*/} 
     <Routes>
     <Route path="/" element={<Layout />}>
       <Route index element={<Home />} />
@@ -57,19 +48,6 @@ function App() {
   </BrowserRouter>
   )
 }
-
-// function Home() {
-//   return (
-//     <h1>Hello, React Router its Home 🏠</h1>
-//   )
-// }
-
-// function About() {
-//   return (
-//     <h1>Hello, its About page 🎉</h1>
-//   )
-// }
-
 ReactDOM
 .createRoot(document.getElementById('root'))
 .render(<App />);
