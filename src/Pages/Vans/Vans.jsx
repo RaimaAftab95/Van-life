@@ -73,7 +73,10 @@ export default function Vans() {
             // state={{ search: searchParams.toString() }}
 
             // This effectively formats the string as a query string that can be used directly in URLs
-            state={{ search: `?${searchParams.toString()}` }}
+            state={{ 
+                search: `?${searchParams.toString()}`,
+                type: typeFilter  
+            }}
             >
            
                 <img alt={van.name} src={van.imageUrl} />
