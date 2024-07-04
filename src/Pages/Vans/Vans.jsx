@@ -49,10 +49,11 @@ import React from "react"
 import { Link, useSearchParams } from "react-router-dom"
 
 export default function Vans() {
-    const [searchParams, setSearchParams] = useSearchParams()
+    const [searchParams, setSearchParams] = useSearchParams();
     const [vans, setVans] = React.useState([])
 
-    const typeFilter = searchParams.get("type")
+    const typeFilter = searchParams.get("type");
+    // console.log("state to pass in link:",searchParams.toString());
 
     React.useEffect(() => {
         fetch("/api/vans")
@@ -63,11 +64,18 @@ export default function Vans() {
     const displayedVans = typeFilter
         ? vans.filter(van => van.type === typeFilter)
         : vans
-        
+
     const vanElements = displayedVans.map(van => (
         <div key={van.id} className="van-tile">
             {/* <Link to={`/vans/${van.id}`}> change this absolute path to relative*/}
-            <Link to={van.id}>
+            <Link 
+            to={van.id}
+            // state={{ search: searchParams.toString() }}
+
+            // This effectively formats the string as a query string that can be used directly in URLs
+            state={{ search: `?${searchParams.toString()}` }}
+            >
+           
                 <img alt={van.name} src={van.imageUrl} />
                 <div className="van-info">
                     <h3>{van.name}</h3>

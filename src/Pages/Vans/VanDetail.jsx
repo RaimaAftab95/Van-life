@@ -1,10 +1,13 @@
 // challange to fetch data by using id of selected van
-import React from "react"
-import { useParams, Link } from "react-router-dom"
+import React from "react";
+import { Link, useParams, useLocation } from "react-router-dom";
 
 export default function VanDetail() {
     const params = useParams();
-    console.log(params);
+    console.log("vandetails params:",params);
+    const location = useLocation();
+    console.log("vandetails location:",location);
+
     const [van, setVan] = React.useState(null);
 
     React.useEffect(() => {
@@ -13,11 +16,15 @@ export default function VanDetail() {
             .then(data => setVan(data.vans))
     }, [params.id])
 
+      const search = location.state?.search || "";
+
     return (
         <div className="van-detail-container">
 
 <Link
-                to=".."
+                // to=".."
+                // modify the link `to` prop to send the user back to prev page with searchParaams included, if they exist. bcz we may not have anything in that state
+                to={`..${search}`}
                 relative="path"
                 className="back-button"
             >&larr; <span>Back to all vans</span></Link>
