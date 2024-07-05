@@ -46,14 +46,28 @@
 
 
 import React from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams, useLoaderData } from "react-router-dom";
 import { getVans } from "../../api";
+
+export function loader() {
+    // return "Vans data goes here"
+   return getVans();
+}
 
 export default function Vans() {
     const [searchParams, setSearchParams] = useSearchParams();
-    const [vans, setVans] = React.useState([]);
-    const [loading, setLoading] = React.useState(false);
+
+    // bcz now we dont need vans state and loading state as we r using loader to load data
+    // const [vans, setVans] = React.useState([]);
+    // const [loading, setLoading] = React.useState(false);
     const [error, setError] = React.useState(null);
+
+    // const data = useLoaderData();
+    //fetch vans using useloaderdata hook
+    const vans = useLoaderData();
+
+    // console.log("loader data:",data);
+    console.log("loader data:",vans);
 
     const typeFilter = searchParams.get("type");
     // console.log("state to pass in link:",searchParams.toString());
@@ -66,21 +80,22 @@ export default function Vans() {
     // move this fetch api in api.js
 
 // use api.js getVans function
-React.useEffect(() => {
-    async function loadVans() {
-        setLoading(true)
-        try {
-            const data = await getVans()
-            setVans(data)
-        } catch (error) {
-            setError(error)
-        } finally {
-            setLoading(false)
-        }
-    }
+// React.useEffect(() => {
+//     async function loadVans() {
+//         setLoading(true)
+//         try {
+//             const data = await getVans()
+//             setVans(data)
+//         } catch (error) {
+//             setError(error)
+//         } finally {
+//             setLoading(false)
+//         }
+//     }
 
-    loadVans()
-}, [])
+//     loadVans()
+// }, [])
+// now using loader and useloaderdata hook to fetch vans list instead of useeffect
 
     const displayedVans = typeFilter
         ? vans.filter(van => van.type === typeFilter)
@@ -121,9 +136,9 @@ React.useEffect(() => {
         })
     }
 
-    if (loading) {
-        return <h1>Loading...</h1>
-    }
+    // if (loading) {
+    //     return <h1>Loading...</h1>
+    // }
     if (error) {
         return <h1>There was an error: {error.message}</h1>
     }
