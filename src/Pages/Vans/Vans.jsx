@@ -60,8 +60,8 @@ export default function Vans() {
     // bcz now we dont need vans state and loading state as we r using loader to load data
     // const [vans, setVans] = React.useState([]);
     // const [loading, setLoading] = React.useState(false);
-    const [error, setError] = React.useState(null);
-
+    //const [error, setError] = React.useState(null);
+    const [error] = React.useState(null);
     // const data = useLoaderData();
     //fetch vans using useloaderdata hook
     const vans = useLoaderData();
