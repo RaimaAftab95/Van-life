@@ -78,6 +78,7 @@ import HostVanInfo from "./Pages/Host/HostVanInfo";
 import HostVanPricing from "./Pages/Host/HostVanPricing";
 import HostVanPhotos from "./Pages/Host/HostVanPhotos";
 import NotFound from "./Pages/NotFound";
+import Login from "./Pages/Login";
 import Layout from "./components/Layout";
 import HostLayout from "./components/HostLayout";
 import Error from "./components/Error";
@@ -88,6 +89,10 @@ const router = createBrowserRouter(createRoutesFromElements(
   <Route path="/" element={<Layout />}>
     <Route index element={<Home />} />
     <Route path="about" element={<About />} />
+    <Route
+      path="login"
+      element={<Login />}
+    />
     <Route 
     path="vans"
     element={<Vans />}
