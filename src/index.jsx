@@ -156,7 +156,7 @@ import Layout from "./components/Layout"
 import HostLayout from "./components/HostLayout"
 import Error from "./components/Error"
 import { requireAuth } from "./utils"
-import AuthRequired from "./AuthRequired"
+// import AuthRequired from "./AuthRequired"
 
 import "./server"
 

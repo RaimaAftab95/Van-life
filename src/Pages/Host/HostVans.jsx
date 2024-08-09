@@ -32,16 +32,16 @@
 //         <section>
 //             <h1 className="host-vans-title">Your listed vans</h1>
 //             <div className="host-vans-list">
-//                 {
-//                     vans.length > 0 ? (
-//                         <section>
-//                             {hostVansEls}
-//                         </section>
+                // {
+                //     vans.length > 0 ? (
+                //         <section>
+                //             {hostVansEls}
+                //         </section>
 
-//                     ) : (
-//                             <h2>Loading...</h2>
-//                         )
-//                 }
+                //     ) : (
+                //             <h2>Loading...</h2>
+                //         )
+                // }
 //             </div>
 //         </section>
 //     )
@@ -51,7 +51,7 @@
 import React from "react"
 import { Link, useLoaderData } from "react-router-dom"
 import { getHostVans } from "../../api"
-import { requireAuth } from "../../utils";
+import { requireAuth } from "../../utils"
 
 export async function loader() {
     await requireAuth()
