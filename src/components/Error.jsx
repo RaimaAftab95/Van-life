@@ -12,15 +12,3 @@ export default function Error() {
         </>
     )
 }
-
-//cgt
-// import React from "react";
-
-// export default function Error({ error }) {
-//     return (
-//         <div className="error-container">
-//             <h1>Unexpected Application Error!</h1>
-//             <pre>{error.message || "An unexpected error occurred."}</pre>
-//         </div>
-//     );
-// }
