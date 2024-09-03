@@ -1,4 +1,3 @@
-// converting link to navlink 
 import React from "react"
 import { NavLink, Outlet } from "react-router-dom"
 

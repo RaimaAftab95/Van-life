@@ -1,4 +1,4 @@
-import { createServer, Model, Response } from "miragejs";
+import { createServer, Model, Response } from "miragejs"
 
 
 createServer({
@@ -16,16 +16,15 @@ createServer({
         server.create("van", { id: "6", name: "Green Wonder", price: 70, description: "With this van, you can take your travel life to the next level. The Green Wonder is a sustainable vehicle that's perfect for people who are looking for a stylish, eco-friendly mode of transport that can go anywhere.", imageUrl: "https://assets.scrimba.com/advanced-react/react-router/green-wonder.png", type: "rugged", hostId: "123" })
         server.create("user", { id: "123", email: "b@b.com", password: "p123", name: "Bob" })
     },
-
+//the id and pwd is hard coded to mock login functionality
     routes() {
         this.namespace = "api"
-        this.passthrough("https://firestore.googleapis.com/**")
         this.logging = false
         // this.timing = 2000
 
         this.get("/vans", (schema, request) => {
-       //return new Response(400, {}, {error: "Error fetching data"});
-        return schema.vans.all();
+            // return new Response(400, {}, {error: "Error fetching data"})
+            return schema.vans.all()
         })
 
         this.get("/vans/:id", (schema, request) => {
@@ -60,6 +59,6 @@ createServer({
                 user: foundUser,
                 token: "Enjoy your pizza, here's your tokens."
             }
-        }, {timing: 2000})
+        })
     }
 })

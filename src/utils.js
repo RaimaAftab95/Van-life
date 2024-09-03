@@ -1,21 +1,26 @@
 // import { redirect } from "react-router-dom"
 
 // export async function requireAuth() {
-//     const isLoggedIn = false;
+//     const isLoggedIn = false
     
 //     if (!isLoggedIn) {
-//         throw redirect("/login")
+//         throw redirect("/login?message=You must log in first.")
 //     }
+//     return null; 
 // }
 // Error Handling: If the throw redirect(...) is not properly caught by React Router, it might result in an unexpected error, which could be the cause of the issue you encountered. so use below code
 
 import { redirect } from "react-router-dom";
 
 export async function requireAuth() {
-  const isLoggedIn = false; // Replace with actual authentication check
+  const isLoggedIn = false;
   
   if (!isLoggedIn) {
-    return redirect("/login"); // Ensure this is the correct way to handle redirection
+    return redirect("/login?message=You must log in first.");
   }
-  return null; // Ensure the loader does not trigger any incorrect HTTP methods
+  return null; 
 }
+
+
+
+
